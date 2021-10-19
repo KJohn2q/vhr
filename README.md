@@ -1,6 +1,6 @@
-扫码加微信（微信ID：**a_java_boy3**），备注微人事，进群讨论。
 
-![微信ID：a_java_boy3](http://img.itboyhub.com/2020/ajavaboy3-a.jpeg)
+
+本项目是对 [vhr](https://github.com/lenve/vhr) 项目的 `fork`， 因原项目自2020年12月便不再更新，运行时也有依赖版本的问题。故 `fork` 于此，作个人学习和对未实现的功能的开发。版权归原作者所有。
 
 ## 项目介绍
 
@@ -242,16 +242,6 @@ npm run build
 
 34. [两年了，微人事项目迎来了一次重大更新](https://mp.weixin.qq.com/s/Eo2RRB6zKQuPDMWlnCHDrw)
 
-## 其他资料
-
-关注公众号**江南一点雨**，专注于 Spring Boot+微服务，定期视频教程分享，关注后回复 2TB ，领取松哥为你精心准备的超 2TB 免费 Java 学习资源。
-
-![公众号二维码](http://www.javaboy.org/images/sb/javaboy.jpg)
-
-[50+ 项目需求文档](https://github.com/lenve/javadoc)
-
-[Java书单推荐](https://github.com/itwanger/JavaBooks)
-
 ## 参考
 
 - [vue-chat](https://github.com/microzz/vue-chat)
@@ -259,16 +249,15 @@ npm run build
 ## License
 
     Copyright 2018 王松
-
+    
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-
+    
         http://www.apache.org/licenses/LICENSE-2.0
-
+    
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
- 
