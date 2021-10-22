@@ -1,12 +1,14 @@
 let proxyObj = {};
 const CompressionPlugin = require("compression-webpack-plugin");
+const vhrserverhost = process.env.vhrserverhost != undefined ? process.env.vhrserverhost : 'localhost'; 
+const mailserverhost = process.env.mailserverhost != undefined ? process.env.mailserverhost : 'localhost';
 proxyObj['/ws'] = {
     ws: true,
-    target: "ws://localhost:8081"
+    target: `ws://${mailserverhost}:8081`
 };
 proxyObj['/'] = {
     ws: false,
-    target: 'http://localhost:8081',
+    target: `http://${mailserverhost}:8081`,
     changeOrigin: true,
     pathRewrite: {
         '^/': ''
@@ -14,7 +16,7 @@ proxyObj['/'] = {
 }
 module.exports = {
     devServer: {
-        host: 'localhost',
+        host: vhrserverhost,
         port: 8080,
         proxy: proxyObj
     },
