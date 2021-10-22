@@ -1,0 +1,6 @@
+# syntax=docker/dockerfile:1
+FROM openjdk:11-jdk
+MAINTAINER john
+WORKDIR /vhr/mailserver
+COPY mailserver/target/mailserver-0.0.1-SNAPSHOT.jar mailserver-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","./mailserver-0.0.1-SNAPSHOT.jar"]

@@ -1,0 +1,6 @@
+# syntax=docker/dockerfile:1
+FROM openjdk:11-jdk
+MAINTAINER john
+WORKDIR /vhr/vhrserver
+COPY vhrserver/vhr-web/target/vhr-web-0.0.1-SNAPSHOT.jar vhr-web-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","./vhr-web-0.0.1-SNAPSHOT.jar"]
