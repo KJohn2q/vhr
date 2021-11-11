@@ -1,14 +1,49 @@
-version: 3.8
+version: "3.9"
 services:
   vuehr:
-    image: node:14.14-alpine
-    command: sh -c "npm install && npm run serve"
-    port: 8080:8080
-    working_dir: /vuehr
-    volumes:
-      - ./:/vuehr
-  backend:
-    image: openjdk:8-jdk-alpine
+    build: ./vuehr
+    ports: 
+      - 8080:80
+  backend_mailserver:
+    build: 
+      context: ./vhr
+      dockerfile: Dockerfile.mailserver
+    ports:
+      - 8082:8082
+    depends_on:
+      - redis
+      - rabbitmq
+    environment:
+      - rabbitmq_host=rabbitmq
+      - redis_host=redis
+  backend_webserver:
+    build: 
+      context: ./vhr
+      dockerfile: Dockerfile.vhrserver
+    ports: 
+      - 8081:8081
+    depends_on:
+      - redis
+      - db
+      - rabbitmq
+    environment:
+      - rabbitmq_host=rabbitmq
+      - redis_host=redis
+      - mysql_host=db
+  db:
+    image: mysql:5.7
+    ports: 
+      - 3360:3306
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+
     
     
   
